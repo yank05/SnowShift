@@ -1,0 +1,30 @@
+body {
+    background-image: url('/SnowShift/Pictures/texture01.png');
+    background-repeat: repeat;
+    background-size: 200px; 
+    background-position: center center;
+    background-color: #000000; 
+
+    color: white;
+}
+
+#logo {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+#graphics {
+    display: flex;
+    width: 60%;
+    height: 400px;
+    background-color: white;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-align: center;
+}
+
