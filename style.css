@@ -1,10 +1,9 @@
 body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-image: url('/SnowShift/Pictures/texture01.png');
     background-repeat: repeat;
     background-size: 200px; 
     background-position: center center;
-    background-color: #000000; 
-
     color: white;
 }
 
@@ -16,15 +15,44 @@ body {
     margin-top: 3%;
 }
 
-#graphics {
+#div {
     display: flex;
     width: 60%;
-    height: 400px;
-    background-color: white;
+    height: 300px;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     color: black;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+#startButton {
+    width: 400px;
+    height: 50px;
+    background-color: green;
+    font-size: x-large;
+    border-width: 5px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    
+}
+
+#textbox {
+    width: 60%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+    
+}
+#timecall1 {
+    margin-right: 20%;
+}
+
+#timecall2 {
+    margin-left: 40%;
+}
