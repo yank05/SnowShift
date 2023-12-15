@@ -16,9 +16,8 @@ function handleLoad() {
 
 function StartClick() {
 
+    removeFrontPage();
     let div = document.getElementById("div");
-    let button = document.getElementById("startButton");
-    div.removeChild(button);
 
     let gif = document.createElement("img");
     gif.setAttribute("src", "../SnowShift/animations/animation1/softbodysim01.gif");
@@ -38,5 +37,26 @@ function StartClick() {
     schrift2.innerHTML = "heute";
     schrift2.setAttribute ("id", "timecall2");
     textbox.appendChild(schrift2);
+
+    let questionbox = document.createElement("div");
+    questionbox.setAttribute("id", "questionbox");
+    div.appendChild(questionbox); 
+
+    let question = document.createElement("p");
+    question.innerHTML = "1960 fielen auf dem Feldberg in einem Winter insgesamt 6,06 Meter Schnee. <br> <br> Wie viel Meter sind es heute?"
+    questionbox.appendChild(question); 
 }
 
+function removeFrontPage() {
+
+    let h1 = document.getElementById("h1");
+    document.body.removeChild(h1);
+
+    let p = document.getElementById("introduction");
+    body.removeChild(p);
+
+    
+    let div = document.getElementById("div");
+    let button = document.getElementById("startButton");
+    div.removeChild(button);
+}
