@@ -19,8 +19,10 @@ function StartClick() {
     removeFrontPage();
     let div = document.getElementById("div");
 
-    let gif = document.createElement("img");
-    gif.setAttribute("src", "../SnowShift/animations/animation1/softbodysim01.gif");
+    let gif = document.createElement("video");
+    gif.setAttribute("src", "../SnowShift/animations/animation1/test01.webm");
+    gif.setAttribute("type", "video/webm"); 
+    gif.setAttribute("autoplay", true); 
     gif.setAttribute("alt", "animation showing two different snow masses");
     div.appendChild(gif);
 
@@ -49,11 +51,13 @@ function StartClick() {
 
 function removeFrontPage() {
 
-    let h1 = document.getElementById("h1");
-    document.body.removeChild(h1);
+    let divText = document.getElementById("text");
+
+    let h1 = document.getElementById("head");
+    divText.removeChild(h1); 
 
     let p = document.getElementById("introduction");
-    body.removeChild(p);
+    divText.removeChild(p);
 
     
     let div = document.getElementById("div");
