@@ -2,13 +2,32 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-image: url('/SnowShift/Pictures/texture01.png');
     background-repeat: repeat;
-    background-size: 200px; 
+    background-size: 100px; 
     background-position: center center;
-    color: white;
+    color: lightgray;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 5px; /* Breite der Streifen anpassen */
+    background: linear-gradient(#40B4FF, #40B4FF, #40B4FF);
+    box-shadow: 0 0 10px #40B4FF, 0 0 20px #40B4FF, 0 0 30px #40B4FF; 
+}
+
+body::before {
+    left: 5%; 
+}
+
+body::after {
+    right: 5%; 
 }
 
 #head {
-    background: linear-gradient(to right, #ffcccc, #ff0000);
+    background: linear-gradient(to right, #b8e3ff, #40B4FF);
     -webkit-background-clip: text;
     font-size: 50px;
     color: transparent;
@@ -16,10 +35,6 @@ body {
     
     text-align: center;
     margin-top: 5%;
-}
-
-#introduction {
-
 }
 
 #logo {
@@ -33,7 +48,7 @@ body {
 #div {
     display: flex;
     width: 60%;
-    height: 300px;
+    height: 100px;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
@@ -44,16 +59,62 @@ body {
     flex-direction: column;
 }
 
+
 #startButton {
-    width: 400px;
+    color: lightgray;
+    width: 200px;
     height: 50px;
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0); /* Vollständig transparentes Grün */
     font-size: x-large;
-    border-width: 5px;
-    border-color: rgb(255, 255, 255);
-    border-radius: 7px;
-    
+    border: 3px solid #27CA7F; /* Border als Strich ohne Box-Shadow */
+    border-radius: 9px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #27CA7F, 0 0 20px #27CA7F, 0 0 30px #27CA7F; /* Leuchteffekt */
 }
+
+#startButton::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: 3px solid #27CA7F; /* Rand als Strich ohne Box-Shadow */
+    border-radius: 9px; /* Passen Sie den Radius an, um ihn mit dem Button abzustimmen */
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+#startButton::before {
+    opacity: 1;
+}
+
+/* Gemeinsame Stile für introduction1 und introduction2 Container */
+.introduction-container {
+    background-color: rgba(44, 44, 44, 0.7); 
+    border-radius: 12px; /* Abrundung der Ecken */
+    padding: 20px; /* Innenabstand anpassen */
+    margin: 2% auto; /* Zentrierung und äußerer Abstand */
+    width: 80%; /* Breite anpassen */
+}
+
+#introduction1,
+#introduction2,
+#introduction3 {
+    text-align: center;
+    font-size: large;
+    line-height: 1.5em;
+}
+
+.HeaderMainpage {
+    margin: 2%;
+    color: #27CA7F;
+    text-align: center;
+    font-size: xx-large;
+}
+
 
 #textbox {
     width: 60%; 

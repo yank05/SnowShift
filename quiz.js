@@ -12,6 +12,7 @@ function handleLoad() {
     div.appendChild(button);
     
     button.addEventListener("click", StartClick);
+
 }
 
 function StartClick() {
@@ -20,6 +21,7 @@ function StartClick() {
     let div = document.getElementById("div");
 
     let gif = document.createElement("video");
+    gif.setAttribute("height", "300px"); 
     gif.setAttribute("src", "../SnowShift/animations/animation1/test01.webm");
     gif.setAttribute("type", "video/webm"); 
     gif.setAttribute("autoplay", true); 
