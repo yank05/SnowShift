@@ -91,8 +91,8 @@ body::after {
     opacity: 1;
 }
 
-/* Gemeinsame Stile für introduction1 und introduction2 Container */
 .introduction-container {
+    color: lightgray;
     background-color: rgba(44, 44, 44, 0.7); 
     border-radius: 12px; /* Abrundung der Ecken */
     padding: 20px; /* Innenabstand anpassen */
@@ -100,9 +100,7 @@ body::after {
     width: 80%; /* Breite anpassen */
 }
 
-#introduction1,
-#introduction2,
-#introduction3 {
+.texts {
     text-align: center;
     font-size: large;
     line-height: 1.5em;
@@ -115,16 +113,21 @@ body::after {
     font-size: xx-large;
 }
 
-
 #textbox {
     width: 60%; 
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: x-large;
-    
+    font-size: x-large;  
 }
+
+#video {
+    position: relative;
+    height: 425px;
+    margin-top: 50%;
+}
+
 #timecall1 {
     margin-right: 20%;
 }

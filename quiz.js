@@ -18,15 +18,43 @@ function handleLoad() {
 function StartClick() {
 
     removeFrontPage();
+    buildQuizPage(); 
+}
+
+function removeFrontPage() {
+
+    let divText = document.getElementById("text");
+
+    let h1 = document.getElementById("head");
+    divText.removeChild(h1); 
+    
+    let div = document.getElementById("div");
+    let button = document.getElementById("startButton");
+    div.removeChild(button);
+
+
+  for (let index = 0; index < 3; index++) {
+    let div = document.getElementById("text" + index);
+    div.remove(); 
+ }
+
+ for (let index = 0; index < 2; index++) {
+    let h = document.getElementById("header" + index);
+    h.remove();
+ }
+
+}
+
+function buildQuizPage() {
     let div = document.getElementById("div");
 
-    let gif = document.createElement("video");
-    gif.setAttribute("height", "300px"); 
-    gif.setAttribute("src", "../SnowShift/animations/animation1/test01.webm");
-    gif.setAttribute("type", "video/webm"); 
-    gif.setAttribute("autoplay", true); 
-    gif.setAttribute("alt", "animation showing two different snow masses");
-    div.appendChild(gif);
+    let video = document.createElement("video");
+    video.setAttribute("id", "video"); 
+    video.setAttribute("src", "../SnowShift/animations/animation1/grafik01.mp4");
+    video.setAttribute("type", "video/mp4"); 
+    video.setAttribute("autoplay", true); 
+    video.setAttribute("alt", "animation showing two different snow masses");
+    div.appendChild(video);
 
     let textbox = document.createElement("div");
     textbox.setAttribute("id", "textbox");
@@ -43,26 +71,26 @@ function StartClick() {
     textbox.appendChild(schrift2);
 
     let questionbox = document.createElement("div");
-    questionbox.setAttribute("id", "questionbox");
+    questionbox.setAttribute("class", "introduction-container");
     div.appendChild(questionbox); 
 
     let question = document.createElement("p");
     question.innerHTML = "1960 fielen auf dem Feldberg in einem Winter insgesamt 6,06 Meter Schnee. <br> <br> Wie viel Meter sind es heute?"
     questionbox.appendChild(question); 
-}
 
-function removeFrontPage() {
+    var inputElement = document.createElement('input');
 
-    let divText = document.getElementById("text");
+    inputElement.type = 'number';
 
-    let h1 = document.getElementById("head");
-    divText.removeChild(h1); 
+    inputElement.id = 'userInput';
+    inputElement.name = 'userInput';
+    inputElement.placeholder = 'Gebe eine Zahl wie zum Beispiel 2,34 ein'; 
 
-    let p = document.getElementById("introduction");
-    divText.removeChild(p);
+    var inputContainer = document.getElementById('inputContainer');
+    div.appendChild(inputElement);
 
-    
-    let div = document.getElementById("div");
-    let button = document.getElementById("startButton");
-    div.removeChild(button);
+    inputElement.addEventListener('input', function() {
+        var enteredNumber = inputElement.value;
+        console.log('Eingegebene Zahl:', enteredNumber);
+    });
 }
