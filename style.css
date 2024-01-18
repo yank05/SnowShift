@@ -1,6 +1,6 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: url('/SnowShift/Pictures/texture01.png');
+    background-image: url('/SnowShift/Pictures/texture02.png');
     background-repeat: repeat;
     background-size: 100px; 
     background-position: center center;
@@ -59,6 +59,34 @@ body::after {
     flex-direction: column;
 }
 
+#div1 {
+    display: flex;
+    position: relative;
+    width: 60%;
+    height: 100px;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#div2 {
+    display: flex;
+    position: relative;
+    width: 60%;
+    height: 100px;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-size: x-large;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
 #startButton {
     color: lightgray;
@@ -97,7 +125,7 @@ body::after {
     border-radius: 12px; /* Abrundung der Ecken */
     padding: 20px; /* Innenabstand anpassen */
     margin: 2% auto; /* Zentrierung und äußerer Abstand */
-    width: 80%; /* Breite anpassen */
+    width: max-content; 
 }
 
 .texts {
@@ -114,7 +142,6 @@ body::after {
 }
 
 #textbox {
-    width: 60%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,19 +151,38 @@ body::after {
 
 #video {
     position: relative;
-    height: 425px;
-    margin-top: 50%;
+    height: 250px;
+    margin-right: 10%;
+}
+
+#neonBeam {
+    content: '';
+    position: absolute;
+    top: -80%; /* Passen Sie die Top-Position an, um die Höhe zu ändern */
+    bottom: -80%;
+    width: 3px; /* Breite des Neon Beams anpassen */
+    background: linear-gradient(#27CA7F, #27CA7F, #27CA7F);
+    box-shadow: 0 0 10px #27CA7F, 0 0 20px #27CA7F, 0 0 30px #27CA7F; /* Leuchteffekt */
+    left: 55%;
+    transform: translateX(-50%);
+    z-index: 1; /* Z-Index anpassen, um den Balken über dem Video zu platzieren */
 }
 
 #timecall1 {
-    margin-right: 20%;
+    order: 0;
+    position: relative;
+    color: lightgray;
+    margin-left: 6%;
 }
 
 #timecall2 {
-    margin-left: 40%;
+    order: 1;
+    position: relative;
+    color: lightgray;
+    margin-left: 23%;
 }
 
-#questionbox {
+/* #questionbox {
     width: 50%; 
     display: flex;
     justify-content: center;
@@ -145,4 +191,50 @@ body::after {
     color: white;
     font-size: x-large;
     background-color: rgb(0, 0, 0);
+} */
+
+#inputElement {
+    order: 2; 
+    position: relative;
+    border: 5px solid rgb(98, 98, 98);
+    border-radius: 7px;
+    background-color: lightgray;
+    color: black; 
+    padding: 5px;
+    margin-left: 28%;
 }
+
+#goOnButton {
+    color: lightgray;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(0, 255, 0, 0); /* Vollständig transparentes Grün */
+    font-size: x-large;
+    border: 3px solid #40B4FF; /* Border als Strich ohne Box-Shadow */
+    border-radius: 9px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    box-shadow: 0 0 10px #40B4FF, 0 0 20px #40B4FF, 0 0 30px #40B4FF; /* Leuchteffekt */
+}
+
+#goOnButton::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: 3px solid #40B4FF; /* Rand als Strich ohne Box-Shadow */
+    border-radius: 9px; /* Passen Sie den Radius an, um ihn mit dem Button abzustimmen */
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+#goOnButton:hover::before {
+    opacity: 1;
+}
+
