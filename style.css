@@ -49,7 +49,7 @@ body::after {
     display: flex;
     width: 60%;
     height: min-content;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
@@ -102,6 +102,7 @@ body::after {
     color: lightgray;
     width: 200px;
     height: 50px;
+    margin-bottom: 5%;
     background-color: rgba(0, 255, 0, 0); /* Vollständig transparentes Grün */
     font-size: x-large;
     border: 3px solid #27CA7F; /* Border als Strich ohne Box-Shadow */
@@ -260,6 +261,7 @@ body::after {
 
 #resultBox p {
     text-align: center;
+    line-height: 1.5em;
 }
 
 #explanation {
@@ -285,17 +287,33 @@ body::after {
 
 #resultBox details p {
     width: 200px; /* Breite für geschlossenes Element */
+    text-align: left;
+    margin-bottom: 15%;
+    margin-top: 10%;
 }
 
 #resultBox details[open] p {
     width: 250px; /* Breite für geöffnetes Element, automatisch anpassen */
+    text-align: left;
+    margin-bottom: 15%;
+    margin-top: 10%;
+    line-height: 1.5em;
 }
 
 #resultBox details[open] {
     width: 207px; 
 }
 
+#gondel {
+    position: relative;
+    height: 600px;
+}
 
+#danke {
+    font-size: x-large;
+    color: #40B4FF;
+    margin-top: 3%;
+}
 
 
 

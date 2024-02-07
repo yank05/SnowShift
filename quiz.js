@@ -213,6 +213,7 @@ function buildQuizPage3() {
     let img = document.getElementById("img");
     img.setAttribute("src", "../SnowShift/animations/animation3/grafik03.gif");
     img.setAttribute("alt", "animation of dots represtenting ski arenas disappearing");
+    img.style.height = "530px"; 
     
     let question = document.createElement("p");
     question.innerHTML = "2023 gab es in Deutschland etwa 700 Skigebiete. <br> Wie viele davon sind in den nächsten Jahren direkt von einer Schließung bedroht?"
@@ -294,8 +295,15 @@ function buildFinalPage() {
         box.appendChild(p)
     }
 
+    let danke = document.createElement("p");
+    danke.setAttribute("id", "danke"); 
+    danke.innerHTML = "Vielen Dank fürs mitmachen!";
+    div1.appendChild(danke);
 
-
+    let gondel = document.createElement("img");
+    gondel.setAttribute("src", "../SnowShift/animations/gondel05.gif");
+    gondel.setAttribute("id", "gondel"); 
+    div1.appendChild(gondel);
 
 }
 
