@@ -315,5 +315,10 @@ body::after {
     margin-top: 3%;
 }
 
+#place {
+    height: 400px;
+    width: 100%;
+}
+
 
 
