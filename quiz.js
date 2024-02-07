@@ -28,9 +28,10 @@ function checkDevice() {
     var isTablet = /ipad|android/.test(userAgent) && !/mobile/.test(userAgent);
 
     if(isMobile || isTablet) {
-        alert("Bitte nutze diese Seite auf einem Laptop oder Desktop-Computer. <br/> www.yank05.github.io/SnowShift");
+        while(true) {
+            alert("Bitte nutzen Sie diese Seite auf einem Laptop oder Desktop-Computer.");
+        }
     }
-    console.log("tag"); 
 }
 
 function LogoKlick() {
