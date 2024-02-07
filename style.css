@@ -4,7 +4,7 @@ body {
     background-repeat: repeat;
     background-size: 100px; 
     background-position: center center;
-    color: lightgray;
+    color: white;
 }
 
 body::before,
@@ -34,7 +34,7 @@ body::after {
     background-clip: text; 
     
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 #logo {
@@ -48,8 +48,9 @@ body::after {
 #div {
     display: flex;
     width: 60%;
-    height: 100px;
-    margin-top: 5%;
+    height: min-content;
+    margin-top: 2%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
     color: black;
@@ -59,33 +60,42 @@ body::after {
     flex-direction: column;
 }
 
+#banner1 {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#banner2 {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #div1 {
     display: flex;
     position: relative;
-    width: 60%;
+    width: 80%;
     height: 100px;
-    margin-top: 7%;
     margin-left: auto;
     margin-right: auto;
     color: black;
     align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #div2 {
     display: flex;
-    position: relative;
-    width: 60%;
-    height: 100px;
-    margin-top: 4%;
-    margin-left: auto;
-    margin-right: auto;
+    height: max-content;
+    margin: auto;
     color: black;
     font-size: x-large;
     align-items: center;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 #startButton {
@@ -119,13 +129,16 @@ body::after {
     opacity: 1;
 }
 
+
 .introduction-container {
-    color: lightgray;
-    background-color: rgba(44, 44, 44, 0.7); 
-    border-radius: 12px; /* Abrundung der Ecken */
-    padding: 20px; /* Innenabstand anpassen */
-    margin: 2% auto; /* Zentrierung und äußerer Abstand */
-    width: max-content; 
+    color: white;
+    font-size: x-large;
+    width: 100%; 
+    order: 1; 
+}
+.introduction-container p {
+    text-align: center;
+    line-height: 1.5em;
 }
 
 .texts {
@@ -149,10 +162,15 @@ body::after {
     font-size: x-large;  
 }
 
-#video {
-    position: relative;
-    height: 250px;
-    margin-right: 10%;
+#imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min-content;
+}
+
+#img {
+   height: 400px;
 }
 
 #neonBeam {
@@ -170,54 +188,42 @@ body::after {
 
 #timecall1 {
     order: 0;
-    position: relative;
     color: lightgray;
-    margin-left: 6%;
+    padding-right: 23%;
 }
 
 #timecall2 {
     order: 1;
-    position: relative;
     color: lightgray;
-    margin-left: 23%;
 }
-
-/* #questionbox {
-    width: 50%; 
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    align-items: center;
-    color: white;
-    font-size: x-large;
-    background-color: rgb(0, 0, 0);
-} */
 
 #inputElement {
     order: 2; 
     position: relative;
     border: 5px solid rgb(98, 98, 98);
     border-radius: 7px;
+    height: 30px;
     background-color: lightgray;
     color: black; 
     padding: 5px;
-    margin-left: 28%;
+    order: 2; 
+    margin-right: 15%;
 }
 
 #goOnButton {
-    color: lightgray;
+    color: white;
     width: 200px;
     height: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgba(0, 255, 0, 0); /* Vollständig transparentes Grün */
     font-size: x-large;
-    border: 3px solid #40B4FF; /* Border als Strich ohne Box-Shadow */
+    border: 3px solid #27CA7F; /* Border als Strich ohne Box-Shadow */
     border-radius: 9px;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 0 10px #40B4FF, 0 0 20px #40B4FF, 0 0 30px #40B4FF; /* Leuchteffekt */
+    box-shadow: 0 0 10px #27CA7F, 0 0 20px #27CA7F, 0 0 30px #27CA7F; /* Leuchteffekt */
+    flex: 0 0 auto;
+    order: 3; 
 }
 
 #goOnButton::before {
@@ -227,14 +233,69 @@ body::after {
     right: -5px;
     bottom: -5px;
     left: -5px;
-    border: 3px solid #40B4FF; /* Rand als Strich ohne Box-Shadow */
+    border: 3px solid #27CA7F; /* Rand als Strich ohne Box-Shadow */
     border-radius: 9px; /* Passen Sie den Radius an, um ihn mit dem Button abzustimmen */
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease-out;
 }
 
-#goOnButton:hover::before {
-    opacity: 1;
+#resultBox {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
 }
+
+#headerResult {
+    margin-top: 2%;
+    font-size: larger;
+}
+
+#resultBox h1 {
+    color: #40B4FF;
+}
+
+#resultBox p {
+    text-align: center;
+}
+
+#explanation {
+    line-height: 1.5em;
+    font-size: large;
+}
+
+#resultBox summary {
+    margin-top: 7%;
+    padding: 5%;
+    background-color: darkgray;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(0, 255, 0, 0); /* Vollständig transparentes Grün */
+    font-size: x-large;
+    border: 3px solid #27CA7F; /* Border als Strich ohne Box-Shadow */
+    border-radius: 9px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #27CA7F, 0 0 20px #27CA7F, 0 0 30px #27CA7F; /* Leuchteffekt */
+    flex: 0 0 auto;
+}
+
+#resultBox details p {
+    width: 200px; /* Breite für geschlossenes Element */
+}
+
+#resultBox details[open] p {
+    width: 250px; /* Breite für geöffnetes Element, automatisch anpassen */
+}
+
+#resultBox details[open] {
+    width: 207px; 
+}
+
+
+
+
 
