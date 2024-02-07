@@ -7,6 +7,7 @@ let correctAnswers = ['2.92', '70%', '175'];
 let result; 
 
 function handleLoad() {
+    checkDevice(); 
 
     let div = document.getElementById("div");
     let button = document.createElement("button"); 
@@ -19,6 +20,16 @@ function handleLoad() {
     
     button.addEventListener("click", StartClick);
 
+}
+
+function checkDevice() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isMobile = /iphone|ipod|android|ie|blackberry|fennec/.test(userAgent) && /mobile/.test(userAgent);
+    var isTablet = /ipad|android/.test(userAgent) && !/mobile/.test(userAgent);
+
+    if(isMobile || isTablet) {
+        alert("Bitte nutzen Sie diese Seite auf einem Laptop oder Desktop-Computer.");
+    }
 }
 
 function LogoKlick() {
