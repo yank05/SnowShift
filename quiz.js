@@ -28,8 +28,9 @@ function checkDevice() {
     var isTablet = /ipad|android/.test(userAgent) && !/mobile/.test(userAgent);
 
     if(isMobile || isTablet) {
-        alert("Bitte nutzen Sie diese Seite auf einem Laptop oder Desktop-Computer.");
+        alert("Bitte nutze diese Seite auf einem Laptop oder Desktop-Computer. <br/> www.yank05.github.io/SnowShift");
     }
+    console.log("tag"); 
 }
 
 function LogoKlick() {
